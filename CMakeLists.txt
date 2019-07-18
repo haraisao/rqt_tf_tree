@@ -16,6 +16,9 @@ install(DIRECTORY resource
 install(PROGRAMS scripts/rqt_tf_tree
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+if(WIN32)
+  install_python_cli(rqt_tf_tree)
+endif()
 
 if (CATKIN_ENABLE_TESTING)
   catkin_add_nosetests(test/dotcode_tf_test.py
